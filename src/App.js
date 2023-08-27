@@ -1,22 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
 
 function App() {
+  const onSubmit = (inputs) => {
+    console.log(inputs);
+    console.log('SUBMIT!');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+        <div>
+          <p>SINGIN</p>
+          <Signin handler={onSubmit} />
+        </div>
+        <div>
+          <p>SINGUP</p>
+          <Signup handler={onSubmit} />
+        </div>
       </header>
     </div>
   );
